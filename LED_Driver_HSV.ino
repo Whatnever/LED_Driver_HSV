@@ -34,6 +34,9 @@ void setup() {
   for (uint8_t i = 0; i < numStrips; i++ ) {
     statefunc[i] = fade;
   }
+  for (uint8_t i = 0; i < numStrips; i++ ) {
+    saveToEEPROM(i*95);
+  }
   previousMillis = millis();
   Serial.begin(9600);
   Serial.println("16 channel PWM LED Driver test!");
